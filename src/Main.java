@@ -12,33 +12,35 @@ import java.awt.Color;
 public class Main {
 
     boolean clear = false;
-    
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
         boolean done = false;
-        
 
         GameBoard board = new GameBoard();
-        
-        
-        while(!done) {
-            Coordinate c = board.getClick();
-            int row = c.getRow();
-            int col = c.getCol();
-            board.putPiece(row, col, Color.red);
-            
-            Coordinate a = board.getClick();
-            int row2 = a.getRow();
-            int col2 = a.getCol();
-            board.putPiece(row2, col2, Color.blue);
-            
-        }
 
+        while (!done) {
+
+            int countLoops = 0;
+
+            while (countLoops != 5) {
+                Coordinate c = board.getClick();
+                int row = c.getRow();
+                int col = c.getCol();
+                board.putPiece(row, col, Color.red);
+
+                Coordinate a = board.getClick();
+                int row2 = a.getRow();
+                int col2 = a.getCol();
+                board.putPiece(row2, col2, Color.blue);
+
+                countLoops++;
+            }
+            board.clearBoard();
+        }
     }
-    
-    
+
 }
