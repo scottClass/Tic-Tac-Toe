@@ -1,7 +1,5 @@
 
 import java.awt.Color;
-import java.awt.event.KeyListener;
-import javax.swing.JComponent;
 
 /*
  * To change this template, choose Tools | Templates
