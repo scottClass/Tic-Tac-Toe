@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 /**
  * A class that represents an 8x8 Game Board like used in Checkers
  *
- * @author lamonta
+ * @author Scott
  */
 public class GameBoard extends JComponent implements MouseListener {
 

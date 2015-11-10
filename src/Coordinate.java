@@ -6,7 +6,7 @@
 /**
  * A Coordinate on the Game Board
  * 
- * @author lamonta
+ * @author Scott
  */
 public class Coordinate {
     

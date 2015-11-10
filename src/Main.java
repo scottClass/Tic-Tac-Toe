@@ -1,7 +1,5 @@
 
 import java.awt.Color;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /*
  * To change this template, choose Tools | Templates
@@ -9,7 +7,7 @@ import java.util.logging.Logger;
  */
 /**
  *
- * @author lamonta
+ * @author scott
  */
 public class Main {
 
@@ -27,22 +25,28 @@ public class Main {
         while (!done) {
 
             int countLoops = 0;
-
-            while (countLoops != 5) {
-                Coordinate c = board.getClick();
-                int row = c.getRow();
-                int col = c.getCol();
-                board.putPiece(row, col, Color.red);
-
-                Coordinate a = board.getClick();
-                int row2 = a.getRow();
-                int col2 = a.getCol();
-                board.putPiece(row2, col2, Color.blue);
-
+            
+            boolean player1 = true;
+            while (countLoops != 9) {
+                if(player1) {
+                    board.setMessage("It's player 1's turn");
+                    Coordinate c = board.getClick();
+                    int row = c.getRow();
+                    int col = c.getCol();
+                    board.putPiece(row, col, Color.red);
+                    player1 = false;
+                } else if (!player1){
+                    board.setMessage("It's player 2's turn");
+                    Coordinate a = board.getClick();
+                    int row2 = a.getRow();
+                    int col2 = a.getCol();
+                    board.putPiece(row2, col2, Color.blue);
+                    player1 = true;
+                }
                 countLoops++;
             }
             try {
-                Thread.sleep(100);
+                Thread.sleep(300);
             } catch (InterruptedException ex) {
                 
             }
