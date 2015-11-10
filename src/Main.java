@@ -35,7 +35,7 @@ public class Main {
                     int col = c.getCol();
                     board.putPiece(row, col, Color.red);
                     player1 = false;
-                } else if (!player1){
+                } else {
                     board.setMessage("It's player 2's turn");
                     Coordinate a = board.getClick();
                     int row2 = a.getRow();
