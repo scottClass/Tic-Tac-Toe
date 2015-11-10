@@ -1,5 +1,7 @@
 
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this template, choose Tools | Templates
@@ -38,6 +40,11 @@ public class Main {
                 board.putPiece(row2, col2, Color.blue);
 
                 countLoops++;
+            }
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+                
             }
             board.clearBoard();
         }
